@@ -1,0 +1,125 @@
+# 
+
+##############################################################
+discovery_f407.name=STM32 Discovery F407
+
+discovery_f407.upload.tool=stlink_upload
+discovery_f407.upload.protocol=stlink
+
+#discovery_f407.upload.use_1200bps_touch=false
+discovery_f407.upload.file_type=bin
+discovery_f407.upload.ram.maximum_size=17000
+discovery_f407.upload.flash.maximum_size=1048576
+discovery_f407.upload.maximum_size=1048576
+
+#discovery_f407.upload.usbID=1EAF:0003
+#discovery_f407.upload.altID=1
+#discovery_f407.upload.auto_reset=true
+
+discovery_f407.build.mcu=cortex-m4
+discovery_f407.build.f_cpu=168000000L
+discovery_f407.build.core=maple
+################### -DSTM32F2 flag may cause problems with multiple definitions.
+discovery_f407.build.extra_flags=-DMCU_STM32F406VG -mthumb -DSTM32_HIGH_DENSITY -DSTM32F2 -DSTM32F4 -DBOARD_discovery_f4 
+discovery_f407.build.ldscript=ld/jtag.ld
+discovery_f407.build.variant=discovery_f407
+discovery_f407.build.variant_system_lib=lib_f407.a
+discovery_f407.build.vect=VECT_TAB_BASE
+discovery_f407.build.density=STM32_HIGH_DENSITY
+discovery_f407.build.error_led_port=GPIOA
+discovery_f407.build.error_led_pin=6
+discovery_f407.build.board=STM32DiscoveryF407
+##############################################################
+black_f407VET6.name=Black STM32 F407VET6
+
+black_f407VET6.upload.tool=stlink_upload
+black_f407VET6.upload.protocol=stlink
+
+#black_f407VET6.upload.use_1200bps_touch=false
+black_f407VET6.upload.file_type=bin
+black_f407VET6.upload.ram.maximum_size=17000
+black_f407VET6.upload.flash.maximum_size=1048576
+black_f407VET6.upload.maximum_size=1048576
+
+#black_f407VET6.upload.usbID=0483:5740
+#black_f407VET6.upload.altID=1
+#black_f407VET6.upload.auto_reset=true
+
+black_f407VET6.build.mcu=cortex-m4
+black_f407VET6.build.f_cpu=168000000L
+black_f407VET6.build.core=maple
+########## removed -DSTM32F2 flag, -DSTM32F4 is now fully functional -DSTM32F2 
+black_f407VET6.build.extra_flags=-DMCU_STM32F406VG -mthumb -DSTM32_HIGH_DENSITY -DSTM32F4 -DBOARD_black_f407VET6 
+##-DSERIAL_USB 
+## RP added  -DSERIAL_USB -DGENERIC_BOOTLOADER
+black_f407VET6.build.ldscript=ld/jtag.ld
+black_f407VET6.build.variant=black_f407VET6
+black_f407VET6.build.variant_system_lib=lib_f407.a
+black_f407VET6.build.vect=VECT_TAB_BASE
+black_f407VET6.build.density=STM32_HIGH_DENSITY
+black_f407VET6.build.error_led_port=GPIOA
+black_f407VET6.build.error_led_pin=6
+black_f407VET6.build.board=BlackSTM32F407VET6
+
+##############################################################
+stm32f4stamp.name=STM32F4Stamp F405
+
+stm32f4stamp.upload.tool=maple_upload
+stm32f4stamp.upload.protocol=maple_dfu
+
+#stm32f4stamp.upload.use_1200bps_touch=false
+stm32f4stamp.upload.file_type=bin
+stm32f4stamp.upload.ram.maximum_size=196608
+stm32f4stamp.upload.flash.maximum_size=1048576
+stm32f4stamp.upload.maximum_size=1048576
+
+stm32f4stamp.upload.usbID=0483:df11
+stm32f4stamp.upload.altID=0
+#stm32f4stamp.upload.auto_reset=true
+stm32f4stamp.upload.dfuse_addr=0x8000000
+
+stm32f4stamp.build.mcu=cortex-m4
+stm32f4stamp.build.f_cpu=168000000L
+stm32f4stamp.build.core=maple
+stm32f4stamp.build.extra_flags=-DMCU_STM32F406VG -mthumb -DSTM32_HIGH_DENSITY -DSTM32F2 -DSTM32F4 -DBOARD_discovery_f4
+stm32f4stamp.build.ldscript=ld/jtag.ld
+stm32f4stamp.build.variant=discovery_f407
+stm32f4stamp.build.variant_system_lib=lib_f407.a
+stm32f4stamp.build.vect=VECT_TAB_BASE
+stm32f4stamp.build.density=STM32_HIGH_DENSITY
+stm32f4stamp.build.error_led_port=GPIOA
+stm32f4stamp.build.error_led_pin=6
+stm32f4stamp.build.board=STM32F4StampF405
+
+##############################################################
+netduino2plus.name=Netduino2 F405
+
+netduino2plus.upload.tool=maple_upload
+netduino2plus.upload.protocol=maple_dfu
+
+#netduino2plus.upload.use_1200bps_touch=false
+netduino2plus.upload.file_type=bin
+netduino2plus.upload.ram.maximum_size=196608
+netduino2plus.upload.flash.maximum_size=1048576
+netduino2plus.upload.maximum_size=1048576
+
+netduino2plus.upload.usbID=0483:df11
+netduino2plus.upload.altID=0
+#netduino2plus.upload.auto_reset=true
+netduino2plus.upload.dfuse_addr=0x8000000
+
+netduino2plus.build.mcu=cortex-m4
+netduino2plus.build.f_cpu=168000000L
+netduino2plus.build.core=maple
+netduino2plus.build.extra_flags=-DMCU_STM32F406VG -mthumb -DSTM32_HIGH_DENSITY -DSTM32F2 -DSTM32F4 -DBOARD_discovery_f4 -DARDUINO_STM32F4_NETDUINO2PLUS
+netduino2plus.build.ldscript=ld/jtag.ld
+netduino2plus.build.variant=discovery_f407
+netduino2plus.build.variant_system_lib=lib_f407.a
+netduino2plus.build.vect=VECT_TAB_BASE
+netduino2plus.build.density=STM32_HIGH_DENSITY
+netduino2plus.build.error_led_port=GPIOD
+netduino2plus.build.error_led_pin=14
+netduino2plus.build.board=Netduino2F405
+
+##############################################################
+
