@@ -1,1 +1,1 @@
-I've included a STM32CubeF4 file - so that the pin assignments are clearer.
+I've included a STM32CubeF4 file (.ioc) - so that the pin assignments are clearer.
